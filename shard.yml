@@ -1,0 +1,22 @@
+name: glassy-skeleton
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+dependencies:
+  glassy-kernel:
+    github: glassy-framework/glassy-kernel
+    branch: master
+
+  glassy-console:
+    github: glassy-framework/glassy-console
+    branch: master
+
+targets:
+  app:
+    main: src/main.cr
+
+crystal: 0.35.1
+
+license: MIT

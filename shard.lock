@@ -1,0 +1,10 @@
+version: 2.0
+shards:
+  glassy-console:
+    git: https://github.com/glassy-framework/glassy-console.git
+    version: 0.1.0+git.commit.aee85e001e7dafbc31349d789f3eec4e2bfa9587
+
+  glassy-kernel:
+    git: https://github.com/glassy-framework/glassy-kernel.git
+    version: 0.1.1+git.commit.8d5098f14db587b53483c560a13b84b2915afbf5
+

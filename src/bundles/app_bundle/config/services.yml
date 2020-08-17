@@ -1,0 +1,8 @@
+services:
+  my_command:
+    class: MyCommand
+    kwargs:
+      input: '@console_input'
+      output: '@console_output'
+    tag:
+      - command
