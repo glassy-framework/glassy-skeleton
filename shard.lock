@@ -1,10 +1,30 @@
 version: 2.0
 shards:
+  exception_page:
+    git: https://github.com/crystal-loot/exception_page.git
+    version: 0.1.4
+
   glassy-console:
     git: https://github.com/glassy-framework/glassy-console.git
-    version: 0.1.0+git.commit.aee85e001e7dafbc31349d789f3eec4e2bfa9587
+    version: 0.1.0+git.commit.4face1b90f4a7a7f017edba4313911599e246935
+
+  glassy-http:
+    git: https://github.com/glassy-framework/glassy-http.git
+    version: 0.1.0+git.commit.8f629f6840b31e93e22a477e1765bb8a44180724
 
   glassy-kernel:
     git: https://github.com/glassy-framework/glassy-kernel.git
-    version: 0.1.1+git.commit.8d5098f14db587b53483c560a13b84b2915afbf5
+    version: 0.1.1+git.commit.cb5af195e58198dae5eed0bf721e6439381aa4f5
+
+  kemal:
+    git: https://github.com/kemalcr/kemal.git
+    version: 0.26.1
+
+  kilt:
+    git: https://github.com/jeromegn/kilt.git
+    version: 0.4.0
+
+  radix:
+    git: https://github.com/luislavena/radix.git
+    version: 0.3.9
 

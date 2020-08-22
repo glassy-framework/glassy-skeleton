@@ -13,6 +13,10 @@ dependencies:
     github: glassy-framework/glassy-console
     branch: master
 
+  glassy-http:
+    github: glassy-framework/glassy-http
+    branch: master
+
 targets:
   app:
     main: src/main.cr

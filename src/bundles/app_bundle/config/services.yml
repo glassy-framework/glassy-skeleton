@@ -6,3 +6,8 @@ services:
       output: '@console_output'
     tag:
       - command
+
+  home_controller:
+    class: HomeController
+    tag:
+      - controller
