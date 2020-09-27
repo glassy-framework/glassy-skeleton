@@ -1,0 +1,5 @@
+parameters:
+  app_secret: 'SampleSecret'
+  db:
+    server: 'mongodb://mongo'
+    default_database: 'default_db'

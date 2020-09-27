@@ -1,13 +1,74 @@
 services:
   my_command:
-    class: MyCommand
+    class: App::MyCommand
     kwargs:
       input: '@console_input'
       output: '@console_output'
     tag:
       - command
 
+  # framework extensions
+  http_error_handler:
+   class: App::ErrorHandler
+
+  # montrollers
   home_controller:
-    class: HomeController
+    class: App::HomeController
     tag:
       - controller
+
+  oauth_controller:
+    class: App::OAuthController
+    kwargs:
+      auth_service: '@auth_service'
+    tag:
+      - controller
+
+  user_controller:
+    class: App::UserController
+    kwargs:
+      user_serializer: '@user_serializer'
+      user_service: '@user_service'
+      user_repository: '@user_repository'
+    tag:
+      - controller
+
+  # mervices
+  user_service:
+    class: App::UserService
+    kwargs:
+      user_repository: '@user_repository'
+      crypt_service: '@crypt_service'
+
+  auth_service:
+    class: App::AuthService
+    kwargs:
+      user_repository: '@user_repository'
+      crypt_service: '@crypt_service'
+      app_secret: '%app_secret:String%'
+
+  crypt_service:
+    class: App::CryptService
+
+  # mepositories
+  user_repository:
+    class: App::UserRepository
+    kwargs:
+      connection: '@db_connection'
+
+  # merializers
+  user_serializer:
+    class: App::UserSerializer
+
+  # middlewares
+  content_type_middleware:
+    class: App::ContentTypeMiddleware
+    tag:
+      - route_middleware
+
+  auth_middleware:
+    class: App::AuthMiddleware
+    kwargs:
+      auth_service: '@auth_service'
+    tag:
+      - route_middleware

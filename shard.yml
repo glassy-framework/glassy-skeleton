@@ -17,6 +17,17 @@ dependencies:
     github: glassy-framework/glassy-http
     branch: master
 
+  glassy-mongo-odm:
+    github: glassy-framework/glassy-mongo-odm
+    branch: master
+
+  jsonapi-serializer-cr:
+    github: andersondanilo/jsonapi-serializer-cr
+    branch: master
+
+  jwt:
+    github: crystal-community/jwt
+
 targets:
   app:
     main: src/main.cr

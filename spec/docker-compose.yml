@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  spec:
+    build: ./containers/spec
+    volumes:
+      - ..:/code
+    depends_on:
+      - mongo
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo:4.2-bionic

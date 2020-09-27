@@ -1,5 +1,9 @@
 version: 2.0
 shards:
+  bindata:
+    git: https://github.com/spider-gazelle/bindata.git
+    version: 1.7.0
+
   exception_page:
     git: https://github.com/crystal-loot/exception_page.git
     version: 0.1.4
@@ -16,6 +20,18 @@ shards:
     git: https://github.com/glassy-framework/glassy-kernel.git
     version: 0.1.1+git.commit.cb5af195e58198dae5eed0bf721e6439381aa4f5
 
+  glassy-mongo-odm:
+    git: https://github.com/glassy-framework/glassy-mongo-odm.git
+    version: 0.1.0+git.commit.8d21f3eb5200a6b7b1d277bf9f6829326646710f
+
+  jsonapi-serializer-cr:
+    git: https://github.com/andersondanilo/jsonapi-serializer-cr.git
+    version: 0.1.0+git.commit.4848c8f580cb0615d1b7c76fbe29192a10f0cd4c
+
+  jwt:
+    git: https://github.com/crystal-community/jwt.git
+    version: 1.4.2
+
   kemal:
     git: https://github.com/kemalcr/kemal.git
     version: 0.26.1
@@ -23,6 +39,14 @@ shards:
   kilt:
     git: https://github.com/jeromegn/kilt.git
     version: 0.4.0
+
+  mongo:
+    git: https://github.com/kimvex/mongodb-crystal.git
+    version: 0.3.0+git.commit.7914bf400555483dfebeca13ff59920b8683461e
+
+  openssl_ext:
+    git: https://github.com/stakach/openssl_ext.git
+    version: 1.2.2
 
   radix:
     git: https://github.com/luislavena/radix.git
