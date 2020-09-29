@@ -11,7 +11,3 @@ RUN cd /tmp \
     && rm -rf watchexec-1.14.0-x86_64-unknown-linux-gnu && rm watchexec-1.14.0-x86_64-unknown-linux-gnu.tar.xz
 
 WORKDIR /code
-
-ADD ./entrypoint.sh /code/entrypoint.sh
-
-CMD ["/code/entrypoint.sh"]

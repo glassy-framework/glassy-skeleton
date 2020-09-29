@@ -9,6 +9,7 @@ services:
       - mongo
     ports:
       - 3000:3000
+    command: ["/code/run-dev.sh"]
 
   mongo:
     image: mongo:4.2-bionic

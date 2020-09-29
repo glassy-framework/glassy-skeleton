@@ -28,6 +28,9 @@ dependencies:
   jwt:
     github: crystal-community/jwt
 
+  dotenv:
+    github: gdotdesign/cr-dotenv
+
 targets:
   app:
     main: src/main.cr
