@@ -1,27 +1,23 @@
-# glassy-skeleton
+# Glassy Skeleton
 
-TODO: Write a description here
+Optional Base source code for building an API with Glassy Framework, that example include a user creation, show and authentication with JWT.
 
 ## Installation
 
-TODO: Write installation instructions here
+```bash
+git clone --depth=1 --branch=master git@github.com:glassy-framework/glassy-skeleton.git mynewproject
+rm -rf ./mynewproject/.git
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+cp .env.example .env
+docker-compose -f spec/docker-compose.yml up
+```
 
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/glassy-skeleton/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+You can start playing!
 
 ## Contributors
 
-- [your-name-here](https://github.com/your-github-user) - creator and maintainer
+- [Anderson Danilo](https://github.com/andersondanilo) - creator and maintainer
