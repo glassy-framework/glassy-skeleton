@@ -1,5 +1,5 @@
 parameters:
-  app_secret: 'SampleSecret'
+  app_secret: '%env(APP_SECRET)%'
   db:
-    server: 'mongodb://mongo'
-    default_database: 'default_db'
+    server: '%env(DB_SERVER)%'
+    default_database: '%env(DB_DATABASE)%'

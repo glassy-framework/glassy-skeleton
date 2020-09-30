@@ -17,17 +17,20 @@ module App
         raise ValidationException.new("Incorrect password")
       end
 
+      login_user(user)
+    end
+
+    def login_user(user : User)
       {
-        user: user,
-        access_token: generate_access_token(user.id.to_s),
+        user:          user,
+        access_token:  generate_access_token(user.id.to_s),
         refresh_token: generate_refresh_token(user.id.to_s),
-        ttl: get_access_ttl
+        ttl:           get_access_ttl,
       }
     end
 
     def get_user_id(access_token : String) : String
       begin
-        puts "access_token => '#{access_token}'"
         payload, header = JWT.decode(access_token, @app_secret, JWT::Algorithm::HS256)
       rescue JWT::ExpiredSignatureError
         raise ValidationException.new("Expired access token")
@@ -54,25 +57,25 @@ module App
       end
 
       {
-        access_token: generate_access_token(payload["sub"].to_s),
+        access_token:  generate_access_token(payload["sub"].to_s),
         refresh_token: generate_refresh_token(payload["sub"].to_s),
-        ttl: get_access_ttl
+        ttl:           get_access_ttl,
       }
     end
 
     def generate_access_token(user_id : String) : String
       JWT.encode({
-        "sub" => user_id,
+        "sub"  => user_id,
         "type" => "access",
-        "exp" => Time.utc.to_unix + get_access_ttl
+        "exp"  => Time.utc.to_unix + get_access_ttl,
       }, @app_secret, JWT::Algorithm::HS256)
     end
 
     def generate_refresh_token(user_id : String) : String
       JWT.encode({
-        "sub" => user_id,
+        "sub"  => user_id,
         "type" => "refresh",
-        "exp" => Time.utc.to_unix + get_refresh_ttl
+        "exp"  => Time.utc.to_unix + get_refresh_ttl,
       }, @app_secret, JWT::Algorithm::HS256)
     end
 

@@ -31,6 +31,10 @@ dependencies:
   dotenv:
     github: gdotdesign/cr-dotenv
 
+development_dependencies:
+  spec-kemal:
+    github: kemalcr/spec-kemal
+
 targets:
   app:
     main: src/main.cr

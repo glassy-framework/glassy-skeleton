@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build: 
+    docker:
+      - image: crystallang/crystal:latest
+        environment:
+          DB_SERVER: mongodb://localhost
+      - image: mongo:4.2-bionic
+        environment:
+          RS: rs
+        ports:
+          - "27017:27017"
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies.
+          command: shards install && apt-get update && apt-get install -y libmongoc-dev libmongoc-1.0-0 libmongoclient-dev
+      - run:
+          name: test
+          command: crystal spec
