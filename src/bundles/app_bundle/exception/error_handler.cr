@@ -16,7 +16,6 @@ module App
     end
 
     def get_error_message(exception : Exception) : String
-      puts "Found #{exception.message} => #{exception.class.name}"
       case exception
       when ValidationException
         exception.message || "Invalid data"
