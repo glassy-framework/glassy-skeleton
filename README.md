@@ -1,5 +1,7 @@
 # Glassy Skeleton
 
+[![CircleCI](https://circleci.com/gh/glassy-framework/glassy-skeleton.svg?style=svg)](https://circleci.com/gh/glassy-framework/glassy-skeleton)
+
 Optional Base source code for building an API with Glassy Framework, that example include a user creation, show and authentication with JWT.
 
 ## Installation
