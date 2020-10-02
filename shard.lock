@@ -18,7 +18,7 @@ shards:
 
   glassy-http:
     git: https://github.com/glassy-framework/glassy-http.git
-    version: 0.1.0+git.commit.5f318a2492afd12bd0eaa931de703ad4219e66da
+    version: 0.1.0+git.commit.b1ff46b853140661568acfd8f1cd1d5118c3fced
 
   glassy-kernel:
     git: https://github.com/glassy-framework/glassy-kernel.git
@@ -26,11 +26,11 @@ shards:
 
   glassy-mongo-odm:
     git: https://github.com/glassy-framework/glassy-mongo-odm.git
-    version: 0.1.0+git.commit.26fc112a79fd92e34cb58da7a271a098260a64f0
+    version: 0.1.0+git.commit.caa38977348e40280e55caeff35f007a4647610b
 
   jsonapi-serializer-cr:
     git: https://github.com/andersondanilo/jsonapi-serializer-cr.git
-    version: 0.1.0+git.commit.84b90a301b1e6e2ce9429556caa418d92d2b70c3
+    version: 0.1.0+git.commit.01972f68f1a26f34b80b9d945f2bc88e8f3a15b1
 
   jwt:
     git: https://github.com/crystal-community/jwt.git
