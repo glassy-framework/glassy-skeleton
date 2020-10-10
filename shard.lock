@@ -30,7 +30,7 @@ shards:
 
   glassy-mongo-odm:
     git: https://github.com/glassy-framework/glassy-mongo-odm.git
-    version: 0.1.0+git.commit.2cfe6a97ed655076697973a75dd556befcfe635d
+    version: 0.1.0+git.commit.f26a67ae8830e1a7925bbe8ec4a46482f6bc3ea2
 
   i18n:
     git: https://github.com/vladfaust/i18n.cr.git
