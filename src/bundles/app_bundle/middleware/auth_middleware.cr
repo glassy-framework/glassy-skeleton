@@ -1,6 +1,5 @@
-require "http/server"
 require "glassy-http"
-require "../autoload"
+require "../service/auth_service"
 
 module App
   class AuthMiddleware < Glassy::HTTP::Middleware

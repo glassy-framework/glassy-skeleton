@@ -21,6 +21,10 @@ dependencies:
     github: glassy-framework/glassy-mongo-odm
     branch: master
 
+  glassy-i18n:
+    github: glassy-framework/glassy-i18n
+    branch: master
+
   jsonapi-serializer-cr:
     github: andersondanilo/jsonapi-serializer-cr
     branch: master

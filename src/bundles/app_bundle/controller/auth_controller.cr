@@ -1,5 +1,5 @@
 require "glassy-http"
-require "../autoload"
+require "../service/auth_service"
 
 module App
   class OAuthController < Glassy::HTTP::Controller
@@ -26,10 +26,10 @@ module App
         login_result = @auth_service.login(username, password)
 
         {
-          "token_type" => "bearer",
-          "access_token" => login_result[:access_token],
+          "token_type"    => "bearer",
+          "access_token"  => login_result[:access_token],
           "refresh_token" => login_result[:refresh_token],
-          "expires_in" => login_result[:ttl],
+          "expires_in"    => login_result[:ttl],
         }.to_json
       when "refresh_token"
         if refresh_token.nil? || refresh_token.not_nil!.raw.nil?
@@ -41,10 +41,10 @@ module App
         login_result = @auth_service.refresh(refresh_token)
 
         {
-          "token_type" => "bearer",
-          "access_token" => login_result[:access_token],
+          "token_type"    => "bearer",
+          "access_token"  => login_result[:access_token],
           "refresh_token" => login_result[:refresh_token],
-          "expires_in" => login_result[:ttl],
+          "expires_in"    => login_result[:ttl],
         }.to_json
       else
         raise ValidationException.new("Invalid grant type")

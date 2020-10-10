@@ -1,8 +1,8 @@
-require "jsonapi-serializer-cr"
-require "../autoload"
+require "./serializer"
+require "../model/user"
 
 module App
-  class UserSerializer < JSONApiSerializer::ResourceSerializer(User)
+  class UserSerializer < Serializer(User)
     identifier id
     type "users"
     attribute name

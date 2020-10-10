@@ -1,0 +1,21 @@
+en:
+  validation:
+    attributes:
+      name: 'Name'
+      email: 'Email'
+      password: 'Password'
+
+    messages:
+      required: "%{attr} can't be empty"
+      email_already_exists: 'Email already exists'
+
+  errors:
+    malformed_json: 'Malformed JSON'
+    email_not_found: 'E-mail not found'
+    incorrect_password: 'Incorrect password'
+    expired_access_token: 'Expired access token'
+    invalid_access_token: 'Invalid access token'
+    invalid_token_type: 'Invalid token type'
+    invalid_refresh_token: 'Invalid refresh token'
+
+  hello_world: 'Hello World'

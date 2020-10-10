@@ -1,6 +1,7 @@
 require "glassy-http"
-require "json"
 require "../serializer/user_serializer"
+require "../repository/user_repository"
+require "../service/user_service"
 
 module App
   class UserController < Glassy::HTTP::Controller

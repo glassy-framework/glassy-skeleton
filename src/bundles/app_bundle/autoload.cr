@@ -1,8 +1,0 @@
-require "./model/*"
-require "./command/*"
-require "./controller/*"
-require "./exception/*"
-require "./middleware/*"
-require "./repository/*"
-require "./serializer/*"
-require "./service/*"

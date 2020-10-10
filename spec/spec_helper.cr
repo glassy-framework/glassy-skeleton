@@ -11,8 +11,8 @@ Kemal.config.port = 3030
 kernel = AppKernel.new
 
 http_kernel = kernel.container.http_kernel
-http_kernel.register_controllers(kernel.container.controller_list)
-http_kernel.register_middlewares(kernel.container.route_middleware_list)
+http_kernel.register_controllers(kernel.container.http_controller_builder_list)
+http_kernel.register_middlewares(kernel.container.http_middleware_list)
 http_kernel.run
 
 Spec.before_each do
@@ -20,7 +20,7 @@ Spec.before_each do
   conn.client[kernel.container.config.get("db.default_database").not_nil!].drop
 end
 
-def post_json (path : String, body : String, headers : HTTP::Headers? = nil)
+def post_json(path : String, body : String, headers : HTTP::Headers? = nil)
   headers ||= HTTP::Headers.new
   headers["Content-Type"] = "application/json"
 

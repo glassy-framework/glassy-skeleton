@@ -1,5 +1,5 @@
 services:
-  my_command:
+  app.my_command:
     class: App::MyCommand
     kwargs:
       input: '@console_input'
@@ -8,67 +8,79 @@ services:
       - command
 
   # framework extensions
-  http_error_handler:
+  http.error_handler:
    class: App::ErrorHandler
 
-  # montrollers
-  home_controller:
+  # controllers
+  app.home_controller:
     class: App::HomeController
+    kwargs:
+      i18n: '@i18n.translator'
     tag:
-      - controller
+      - http.controller
 
-  oauth_controller:
+  app.oauth_controller:
     class: App::OAuthController
     kwargs:
-      auth_service: '@auth_service'
+      auth_service: '@app.auth_service'
     tag:
-      - controller
+      - http.controller
 
-  user_controller:
+  app.user_controller:
     class: App::UserController
     kwargs:
-      user_serializer: '@user_serializer'
-      user_service: '@user_service'
-      user_repository: '@user_repository'
+      user_serializer: '@app.user_serializer'
+      user_service: '@app.user_service'
+      user_repository: '@app.user_repository'
     tag:
-      - controller
+      - http.controller
 
-  # mervices
-  user_service:
+  # services
+  app.user_service:
     class: App::UserService
     kwargs:
-      user_repository: '@user_repository'
-      crypt_service: '@crypt_service'
+      user_repository: '@app.user_repository'
+      crypt_service: '@app.crypt_service'
+      i18n: '@i18n.translator'
 
-  auth_service:
+  app.auth_service:
     class: App::AuthService
     kwargs:
-      user_repository: '@user_repository'
-      crypt_service: '@crypt_service'
+      user_repository: '@app.user_repository'
+      crypt_service: '@app.crypt_service'
       app_secret: '%app_secret:String%'
+      i18n: '@i18n.translator'
 
-  crypt_service:
+  app.crypt_service:
     class: App::CryptService
 
-  # mepositories
-  user_repository:
+  # repositories
+  app.user_repository:
     class: App::UserRepository
     kwargs:
-      connection: '@db_connection'
+      connection: '@db.connection'
 
-  # merializers
-  user_serializer:
+  # serializers
+  app.user_serializer:
     class: App::UserSerializer
 
   # middlewares
-  content_type_middleware:
+  app.content_type_middleware:
     class: App::ContentTypeMiddleware
     tag:
-      - route_middleware
+      - http.middleware
 
-  auth_middleware:
+  app.accept_language_middleware:
+    class: App::AcceptLanguageMiddleware
+    tag:
+      - http.middleware
+    kwargs:
+      yaml_data: '@i18n.yaml_data'
+      i18n_builder: '@i18n.translator_builder'
+
+  app.auth_middleware:
     class: App::AuthMiddleware
     kwargs:
-      auth_service: '@auth_service'
+      auth_service: '@app.auth_service'
     tag:
-      - route_middleware
+      - http.middleware

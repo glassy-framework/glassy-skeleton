@@ -1,0 +1,21 @@
+pt-BR:
+  validation:
+    attributes:
+      name: 'Nome'
+      email: 'Email'
+      password: 'Senha'
+
+    messages:
+      required: "%{attr} não pode estar vazio"
+      email_already_exists: 'Email already exists'
+
+  errors:
+    malformed_json: "JSON malformado"
+    email_not_found: 'E-mail não encontrado'
+    incorrect_password: 'Senha incorreta'
+    expired_access_token: 'Access token expirado'
+    invalid_access_token: 'Access token inválido'
+    invalid_token_type: 'Tipo de token inválido'
+    invalid_refresh_token: 'Refresh token inválido'
+
+  hello_world: "Olá Mundo"

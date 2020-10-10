@@ -1,5 +1,5 @@
 require "glassy-mongo-odm"
-require "../autoload"
+require "../model/user"
 
 module App
   class UserRepository < Glassy::MongoODM::Repository(User)
