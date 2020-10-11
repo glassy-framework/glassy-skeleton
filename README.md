@@ -15,7 +15,7 @@ rm -rf ./mynewproject/.git
 
 ```
 cp .env.example .env
-docker-compose -f spec/docker-compose.yml up
+docker-compose up
 ```
 
 You can start playing!
