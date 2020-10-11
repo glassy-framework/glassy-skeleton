@@ -13,3 +13,8 @@ services:
 
   mongo:
     image: mongo:4.2-bionic
+    volumes:
+      - data_mongo:/data/db
+
+volumes:
+  data_mongo:
