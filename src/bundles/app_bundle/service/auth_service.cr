@@ -42,7 +42,7 @@ module App
       begin
         payload, header = JWT.decode(access_token, @app_secret, JWT::Algorithm::HS256)
       rescue JWT::ExpiredSignatureError
-        raise ValidationException.new(@i18n.t("errors.incorrect_password"))
+        raise ValidationException.new(@i18n.t("errors.expired_access_token"))
       rescue
         raise ValidationException.new(@i18n.t("errors.invalid_access_token"))
       end
