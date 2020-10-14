@@ -53,6 +53,8 @@ services:
 
   app.crypt_service:
     class: App::CryptService
+    kwargs:
+      app_secret: '%app_secret:String%'
 
   # repositories
   app.user_repository:
