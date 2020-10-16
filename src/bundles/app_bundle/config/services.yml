@@ -36,6 +36,9 @@ services:
       - http.controller
 
   # services
+  app.cors_service:
+    class: App::CorsService
+  
   app.user_service:
     class: App::UserService
     kwargs:
@@ -67,6 +70,13 @@ services:
     class: App::UserSerializer
 
   # middlewares
+  app.cors_middleware:
+    class: App::CorsMiddleware
+    kwargs:
+      cors_service: '@app.cors_service'
+    tag:
+      - http.middleware
+
   app.content_type_middleware:
     class: App::ContentTypeMiddleware
     tag:
